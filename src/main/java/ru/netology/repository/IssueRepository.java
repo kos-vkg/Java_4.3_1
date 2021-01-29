@@ -23,8 +23,6 @@ public class IssueRepository {
 
     }
 
-
-
     public boolean removeById(int id) {
         Issue item = this.getById(id);
         if (item == null) return false;
@@ -47,4 +45,5 @@ public class IssueRepository {
     public boolean removeAll(List<Issue> items) {
         return this.items.removeAll(items);
     }
+
 }

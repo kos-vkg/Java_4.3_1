@@ -1,6 +1,7 @@
 package ru.netology.domain;
 
 import java.util.Date;
+import java.util.List;
 import java.util.Objects;
 
 public class Issue implements Comparable<Issue> {
@@ -8,14 +9,14 @@ public class Issue implements Comparable<Issue> {
     private int id;
     private boolean open;
     private String autor;
-    private String label;
+    private List<Label> label; // private String label;
     private String assignee;
     private Date date;
 
     public Issue() {
     }
 
-    public Issue(int id, boolean open, String autor, String label, String assignee, Date date) {
+    public Issue(int id, boolean open, String autor, List<Label> label, String assignee, Date date) {
         this.id = id;
         this.open = open;
         this.autor = autor;
@@ -39,7 +40,7 @@ public class Issue implements Comparable<Issue> {
                 Objects.equals(autor, issue.autor) &&
                 Objects.equals(label, issue.label) &&
                 Objects.equals(assignee, issue.assignee) &&
-                Objects.equals(date,issue.date);
+                Objects.equals(date, issue.date);
     }
 
     @Override
@@ -53,12 +54,11 @@ public class Issue implements Comparable<Issue> {
                 "id=" + id +
                 ", open=" + open +
                 ", autor='" + autor + '\'' +
-                ", label='" + label + '\'' +
+                //", label='" + label + '\'' +
                 ", assignee='" + assignee + '\'' +
                 ", date='" + date + '\'' +
                 '}';
     }
-
 
     public int getId() {
         return id;
@@ -84,11 +84,11 @@ public class Issue implements Comparable<Issue> {
         this.autor = autor;
     }
 
-    public String getLabel() {
+    public List<Label> getLabel() {
         return label;
     }
 
-    public void setLabel(String label) {
+    public void setLabel(List<Label> label) {
         this.label = label;
     }
 
